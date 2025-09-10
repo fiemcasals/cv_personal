@@ -1,0 +1,41 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CV | Mauricio Casals</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a class="brand" href="{% url 'home' %}">MC</a>
+            <nav class="nav-links">
+                <a href="{% url 'home' %}">Inicio</a>
+                <a href="{% url 'experience' %}">Experiencia</a>
+                <a href="{% url 'skills' %}">Habilidades</a>
+                <a href="{% url 'education' %}">Formación</a>
+                <a href="{% url 'contact' %}">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container content">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            © {{ now|default:":)" }} • Hecho con Django
+        </div>
+    </footer>
+</body>
+</html>

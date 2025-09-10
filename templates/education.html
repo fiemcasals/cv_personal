@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+    <h2>Formación</h2>
+    <ul class="timeline">
+        {% for f in cv.formacion %}
+        <li>
+            <h4>{{ f.titulo }}</h4>
+            <div class="muted">{{ f.inst }}{% if f.fecha %} — {{ f.fecha }}{% endif %}{% if f.estado %} — {{ f.estado }}{% endif %}</div>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

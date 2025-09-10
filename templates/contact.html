@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+    <h2>Contacto</h2>
+    <form method="post" class="form">
+        {% csrf_token %}
+        <div class="grid two">
+            <div class="field">
+                <label for="{{ form.nombre.id_for_label }}">Nombre</label>
+                {{ form.nombre }}
+            </div>
+            <div class="field">
+                <label for="{{ form.email.id_for_label }}">Email</label>
+                {{ form.email }}
+            </div>
+        </div>
+        <div class="field">
+            <label for="{{ form.mensaje.id_for_label }}">Mensaje</label>
+            {{ form.mensaje }}
+        </div>
+        <button type="submit" class="btn">Enviar</button>
+    </form>
+</section>
+{% endblock %}
