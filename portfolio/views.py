@@ -104,3 +104,7 @@ def contact(request):
     else:
         form = ContactForm()
     return render(request, 'contact.html', {"form": form})
+
+# Vista para el CV de gchico
+def cv_gchico(request):
+    return render(request, 'cv_gchico.html', {"cv": CV})

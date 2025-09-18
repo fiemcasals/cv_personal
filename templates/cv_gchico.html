@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="cv-container">
+    <h1>{{ cv.nombre }}</h1>
+    <p><strong>Email:</strong> {{ cv.email }}</p>
+    <p><strong>Teléfono:</strong> {{ cv.telefono }}</p>
+    <p><strong>Ubicación:</strong> {{ cv.ubicacion }}</p>
+    <p><strong>Perfil:</strong> {{ cv.perfil }}</p>
+    <h2>Links</h2>
+    <ul>
+        <li><a href="{{ cv.links.github }}" target="_blank">GitHub</a></li>
+        <li><a href="{{ cv.links.linkedin }}" target="_blank">LinkedIn</a></li>
+    </ul>
+    <h2>Skills</h2>
+    <ul>
+        {% for skill in cv.skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Idiomas</h2>
+    <ul>
+        {% for idioma in cv.idiomas %}
+        <li>{{ idioma }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Experiencia</h2>
+    <ul>
+        {% for exp in cv.experiencia %}
+        <li><strong>{{ exp.rol }}</strong> - {{ exp.org }} {% if exp.fecha %} ({{ exp.fecha }}){% endif %}<br>{{ exp.desc }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Formación</h2>
+    <ul>
+        {% for form in cv.formacion %}
+        <li><strong>{{ form.titulo }}</strong> - {{ form.inst }} {% if form.fecha %} ({{ form.fecha }}){% endif %} {% if form.estado %} ({{ form.estado }}){% endif %}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
