@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+    <h2>Experiencia</h2>
+    <ul class="timeline">
+        {% for e in cv.experiencia %}
+        <li>
+            <h4>{{ e.rol }} — <span class="muted">{{ e.org }}</span></h4>
+            {% if e.fecha %}<div class="muted">{{ e.fecha }}</div>{% endif %}
+            <p>{{ e.desc }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

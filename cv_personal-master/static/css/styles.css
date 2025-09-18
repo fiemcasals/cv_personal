@@ -1,0 +1,41 @@
+:root{
+    --bg:#0b1020; --fg:#e6edf3; --card:#141b2d; --muted:#9fb1c1; --accent:#5aa9ff;
+    --chip:#1d2742; --ok:#19c37d; --err:#ff6464; --info:#5aa9ff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,Segoe UI,Roboto,Ubuntu,Arial,sans-serif}
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+a{color:var(--accent);text-decoration:none}
+
+/* Sticky top nav */
+.navbar{
+    position:fixed; top:0; left:0; right:0;
+    backdrop-filter:saturate(180%) blur(6px);
+    background:rgba(11,16,32,.75);
+    border-bottom:1px solid #1b2742; z-index:1000;
+}
+.navbar .container{display:flex;align-items:center;gap:1rem}
+.brand{font-weight:800;font-size:1.2rem;background:linear-gradient(90deg,#5aa9ff,#7bdfff);-webkit-background-clip:text;color:transparent}
+.nav-links{display:flex;gap:1rem;flex-wrap:wrap}
+.content{padding-top:5rem;padding-bottom:3rem}
+
+.card{background:var(--card);padding:1rem;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.25);margin-top:1rem}
+.muted{color:var(--muted)}
+.grid.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+@media (max-width:768px){ .grid.two{grid-template-columns:1fr} }
+
+.chips{display:flex;gap:.5rem;flex-wrap:wrap}
+.chip{background:var(--chip);padding:.4rem .7rem;border-radius:999px;font-size:.95rem;border:1px solid #273152}
+.timeline{list-style:none;padding:0;margin:0}
+.timeline li{padding:.4rem 0;border-left:2px solid #273152;margin-left:.6rem;padding-left:1rem}
+.form .field input, .form .field textarea{
+    width:100%;padding:.7rem .8rem;border-radius:10px;border:1px solid #273152;background:#0e1530;color:var(--fg);
+}
+.btn{background:var(--accent);border:0;color:#000;padding:.7rem 1rem;border-radius:10px;font-weight:700;cursor:pointer}
+.messages{list-style:none;padding:0;margin:0 0 1rem 0}
+.messages li{padding:.6rem .8rem;border-radius:10px;margin:.3rem 0}
+.messages li.success{background:rgba(25,195,125,.15);border:1px solid rgba(25,195,125,.4)}
+.messages li.error{background:rgba(255,100,100,.15);border:1px solid rgba(255,100,100,.4)}
+.messages li.info{background:rgba(90,169,255,.15);border:1px solid rgba(90,169,255,.4)}
+
+.footer{border-top:1px solid #1b2742;color:var(--muted)}

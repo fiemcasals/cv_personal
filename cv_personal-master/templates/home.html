@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero card">
+    <h1>{{ cv.nombre }}</h1>
+    <p class="muted">{{ cv.perfil }}</p>
+    <div class="grid two">
+        <div>
+            <h3>Contacto</h3>
+            <p>📧 {{ cv.email }}<br>📱 {{ cv.telefono }}<br>📍 {{ cv.ubicacion }}</p>
+        </div>
+        <div>
+            <h3>Idiomas</h3>
+            <ul>
+                {% for i in cv.idiomas %}<li>{{ i }}</li>{% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

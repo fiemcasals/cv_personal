@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+    <h2>Habilidades</h2>
+    <div class="chips">
+    {% for s in cv.skills %}
+        <span class="chip">{{ s }}</span>
+    {% endfor %}
+    </div>
+</section>
+{% endblock %}
