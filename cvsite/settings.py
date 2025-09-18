@@ -17,8 +17,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio',
+<<<<<<< HEAD
     'presentacion'
     #'portfolioMaximo',
+=======
+    'juan_cv',
+>>>>>>> juan_cv
 ]
 
 MIDDLEWARE = [
