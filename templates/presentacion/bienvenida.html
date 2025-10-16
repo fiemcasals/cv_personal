@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Presentacion</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header class="navbar">
+        <h1>Bienvenido</h1>
+    </header>
+
+    <main class="container content">
+        <h2>Para ver el cv del interesado ingrese /nombre al final de la url</h2>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            © {{ now|default:":)" }} • Hecho con Django
+        </div>
+    </footer>
+</body>
+</html>
